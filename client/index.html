@@ -1,0 +1,41 @@
+<html ng-app="shawApp">
+<head>
+	<title>Test for a Job</title>
+	<link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
+</head>
+	<body ng-controller="PalindromeController as palindromeCtrl">
+		<nav class="navbar navbar-default"> 
+			<div class="container-fluid"> 
+				<div class="navbar-header"> 
+					<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-4" aria-expanded="false"> 
+						<span class="sr-only">Toggle navigation</span> 
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span> 
+					</button> 
+					<a class="navbar-brand" href="#">rs.acacio</a> 
+				</div>
+			</div> 
+		</nav>
+		<div class="container">
+			<h3>Shaw</h3><hr/>
+			<form>
+				<div class="form-group">
+					<label for="setence">Setence for test:</label>
+					<input type="text" class="form-control" id="setence" placeholder="Type a setence..." ng-model="palindromeCtrl.setence">
+				</div>
+				<button class="btn btn-default" ng-click="palindromeCtrl.verify()">Go Test!</button>
+			</form>
+			<div>
+				<span class="text-success" ng-if="palindromeCtrl.verified && palindromeCtrl.isPalindrome">The setence is a palindrome</span>	
+				<span class="text-danger" ng-if="palindromeCtrl.verified && !palindromeCtrl.isPalindrome">The setence isn't a palindrome</span>
+			</div>
+		</div>
+		<script src="bower_components/angular/angular.min.js"></script>
+		<script src="bower_components/jquery/dist/jquery.min.js"></script>
+		<script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+		<script src="app.js"></script>
+		<script src="palindromeController.js"></script>
+		<script src="palindromeService.js"></script>
+	</body>
+</html>
